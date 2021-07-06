@@ -2,8 +2,8 @@
 The purpose of this project is to code a small data exchange program using UNIX signals
 Strategy: convert text messages to binary and transmit them using SIGSUR
 
-[Great Video Explaining Sending and Handling Signals](https://www.youtube.com/watch?v=83M5-NPDeWs)
-[StackOverflow answer explaining the strategy](https://stackoverflow.com/questions/39590535/user-defined-signals-sigusr1-and-sigusr2)
+[Great Video Explaining Sending and Handling Signals](https://www.youtube.com/watch?v=83M5-NPDeWs)  
+[StackOverflow answer explaining the strategy](https://stackoverflow.com/questions/39590535/user-defined-signals-sigusr1-and-sigusr2)  
 [Video to understand signal transmission between processes](https://www.youtube.com/watch?v=PErrlOx3LYE)
 
 Signal: Detect signals and then triggers a function

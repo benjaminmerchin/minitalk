@@ -4,8 +4,10 @@ CC		=	clang
 OBJDIR	=	objects
 SRC		=	libft.c
 SRC_C	=	client.c $(SRC)
+SRC_C_B	=	client_bonus.c $(SRC)
 SRC_S	=	server.c $(SRC)
 OBJ_C 	=	$(addprefix $(OBJDIR)/, $(SRC_C:.c=.o))
+OBJ_C_B	=	$(addprefix $(OBJDIR)/, $(SRC_C_B:.c=.o))
 OBJ_S 	=	$(addprefix $(OBJDIR)/, $(SRC_S:.c=.o))
 CFLAGS	=	-Wall -Wextra -Werror#-g3 -fsanitize=address
 
@@ -19,10 +21,14 @@ endif
 
 all: $(NAME_C) $(NAME_S)
 
-bonus: all
+bonus: $(NAME_C_B) $(NAME_S)
 
 $(NAME_C): $(OBJ_C)
 	@$(CC) $(CFLAGS) $(OBJ_C) -o $(NAME_C)
+	@echo "${GREEN}Compilation Client Done${RESET}"
+
+$(NAME_C_B): $(OBJ_C_B)
+	@$(CC) $(CFLAGS) $(OBJ_C_B) -o $(NAME_C)
 	@echo "${GREEN}Compilation Client Done${RESET}"
 
 $(NAME_S): $(OBJ_S)

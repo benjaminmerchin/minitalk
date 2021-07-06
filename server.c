@@ -2,16 +2,17 @@
 
 void	signal_convertion(int signum)
 {
-	static int	ascii = 0;
-	static int	power = 0;
+	static int	ascii;
+	static int	power;
 
 	if (signum == SIGUSR1)
-	ascii += 1 << (7 - power);
-	if ((power += 1) == 8)
+		ascii += 1 << (7 - power);
+	power++;
+	if (power == 8)
 	{
-	putchar(ascii);
-	power = 0;
-	ascii = 0;
+		ft_putchar(ascii);
+		power = 0;
+		ascii = 0;
 	}
 }
 
@@ -26,9 +27,6 @@ int	main()
 	ft_putnbr(pid);
 	ft_putchar('\n');
 	while (1)
-	{
-		;
-	}
-	pause();
+		pause();
 	return (0);
 }

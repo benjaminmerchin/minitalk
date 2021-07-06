@@ -1,14 +1,19 @@
 #include "minitalk.h"
 
-void	decimal_conversion(char ascii, int power, int pid)
+void	convert_char(char c, int pid)
 {
-	usleep(100);
-	if (power > 0)
-		decimal_conversion(ascii / 2, power--, pid);
-	if ((ascii % 2) == 1)
-		kill(pid, SIGUSR1);
-	else
-		kill(pid, SIGUSR2);
+	int	i;
+
+	i = 7;
+	while (i >= 0)
+	{
+		usleep(100);
+		if (c >> i & 1)
+			kill(pid, SIGUSR1);
+		else
+			kill(pid, SIGUSR2);
+		i--;
+	}
 }
 
 int	main(int ac, char **av)
