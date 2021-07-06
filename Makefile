@@ -25,7 +25,7 @@ $(NAME_C): $(OBJ_C)
 	@$(CC) $(CFLAGS) $(OBJ_C) -o $(NAME_C)
 	@echo "${GREEN}Compilation Client Done${RESET}"
 
-$(NAME_S): $(OBJ_C)
+$(NAME_S): $(OBJ_S)
 	@$(CC) $(CFLAGS) $(OBJ_S) -o $(NAME_S)
 	@echo "${GREEN}Compilation Server Done${RESET}"
 

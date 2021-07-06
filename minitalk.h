@@ -6,4 +6,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+void	ft_putstr(char *s);
+int		ft_strlen(const char *s);
+
 #endif

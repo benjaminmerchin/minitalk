@@ -12,7 +12,7 @@ Kill: Usefull to kill a process through the terminal
 Getpid: Return the pid of the calling process
 Pause/Sleep/Usleep: Pause the program during a set time
 
-##Examples
+## Examples
 This will call the handler function when the SIGINT signal (ctrl + c) is tiggered in the terminal
 ```
 signal(SIGINT, handler);
