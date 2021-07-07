@@ -1,6 +1,6 @@
 #include "minitalk.h"
 
-void	convert_char(char c, int pid)
+void	transmit_char(char c, int pid)
 {
 	int	i;
 	int	temp;
@@ -8,7 +8,7 @@ void	convert_char(char c, int pid)
 	i = 7;
 	while (i >= 0)
 	{
-		usleep(100);
+		usleep(50);
 		temp = c >> i;
 		if (temp & 1)
 			kill(pid, SIGUSR1);
@@ -24,19 +24,19 @@ int	main(int ac, char **av)
 	int		i;
 	char	*msg;
 
-	pid = ft_atoi(av[1]);
-	if (ac != 3 || pid < 1)
+	if (ac != 3)
 	{
-		ft_putstr("Error: Arguments");
+		ft_putstr("Error: Arguments\n");
 		return (0);
 	}
+	pid = ft_atoi(av[1]);
 	i = 0;
 	while (av[2][i])
-		convert_char(av[2][i++], pid);
+		transmit_char(av[2][i++], pid);
 	msg = "\nMessage Received\n";
 	i = 0;
 	while (msg[i])
-		convert_char(msg[i++], pid);
+		transmit_char(msg[i++], pid);
 	ft_putstr("Message Sent\n");
 	return (0);
 }

@@ -11,7 +11,7 @@ OBJ_C 	=	$(addprefix $(OBJDIR)/, $(SRC_C:.c=.o))
 OBJ_C_B	=	$(addprefix $(OBJDIR)/, $(SRC_C_B:.c=.o))
 OBJ_S 	=	$(addprefix $(OBJDIR)/, $(SRC_S:.c=.o))
 OBJ_S_B	=	$(addprefix $(OBJDIR)/, $(SRC_S_B:.c=.o))
-CFLAGS	=	-Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror
 
 ifneq (,$(findstring xterm,${TERM}))
 	GREEN := $(shell tput -Txterm setaf 2)
