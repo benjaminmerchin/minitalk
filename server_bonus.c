@@ -18,10 +18,13 @@ void	signal_convertion(int signum)
 
 int	main(void)
 {
-	int	pid;
+	int					pid;
+	struct sigaction	sa;
 
-	signal(SIGUSR1, signal_convertion);
-	signal(SIGUSR2, signal_convertion);
+	sa.sa_handler = signal_convertion;
+	sa.sa_flags = SA_RESTART;
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
 	pid = getpid();
 	ft_putnbr(pid);
 	ft_putchar('\n');

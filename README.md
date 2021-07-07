@@ -33,6 +33,7 @@ int main()
 {
 	struct sigaction sa;
 	sa.sa_handler = function_triggered;
+	sa.sa_flags = SA_RESTART;
 
 	sigaction(SIGINT, &sa, NULL);
 

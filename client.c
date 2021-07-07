@@ -24,11 +24,6 @@ int	main(int ac, char **av)
 	}
 	i = 0;
 	while (av[2][i])
-	{
-		//ft_putchar(av[2][i]);
 		decimal_conversion(av[2][i++], 7, pid);
-		//convert_char(av[2][i++], pid);
-	}
-	ft_putchar('\n');
 	return (0);
 }
